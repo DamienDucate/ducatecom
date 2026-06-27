@@ -39,64 +39,6 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-// Contact form validation
-const form = document.getElementById('contact-form');
-const successMessage = document.getElementById('form-success');
-
-const fields = {
-  name: {
-    el: document.getElementById('name'),
-    error: document.getElementById('name-error'),
-    validate: (value) => (value.trim().length < 2 ? 'Please enter your name.' : ''),
-  },
-  email: {
-    el: document.getElementById('email'),
-    error: document.getElementById('email-error'),
-    validate: (value) => {
-      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return pattern.test(value) ? '' : 'Please enter a valid email address.';
-    },
-  },
-  message: {
-    el: document.getElementById('message'),
-    error: document.getElementById('message-error'),
-    validate: (value) => (value.trim().length < 10 ? 'Message must be at least 10 characters.' : ''),
-  },
-};
-
-function validateField(field) {
-  const message = field.validate(field.el.value);
-  field.error.textContent = message;
-  field.el.style.borderColor = message ? 'var(--error)' : '';
-  return !message;
-}
-
-Object.values(fields).forEach((field) => {
-  field.el.addEventListener('blur', () => validateField(field));
-  field.el.addEventListener('input', () => {
-    if (field.error.textContent) validateField(field);
-  });
-});
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const isValid = Object.values(fields).every(validateField);
-
-  if (isValid) {
-    successMessage.hidden = false;
-    form.reset();
-    Object.values(fields).forEach((field) => {
-      field.error.textContent = '';
-      field.el.style.borderColor = '';
-    });
-
-    setTimeout(() => {
-      successMessage.hidden = true;
-    }, 5000);
-  }
-});
-
 // Fade-in animation for sections as they scroll into view
 const observer = new IntersectionObserver(
   (entries) => {
