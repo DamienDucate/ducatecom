@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal portfolio website">
-  <title>Ducate — Portfolio</title>
+  <title>Ducate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Navigation -->
   <header class="header">
     <nav class="nav container">
-      <a href="#" class="logo">Ducate</a>
+      <a href="#" class="logo">
+        <span class="logo-prompt">❯</span>
+        <span class="logo-path">~/ducate</span>
+      </a>
 
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="nav-toggle-bar"></span>
@@ -24,36 +26,58 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#home">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-bg"></div>
       <div class="container hero-content">
-        <p class="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-title">Damien</h1>
-        <p class="hero-subtitle">Web Design, Finance, Tech</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="https://github.com/DamienDucate" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div class="hero-terminal">
+          <div class="hero-terminal-bar">
+            <span class="terminal-dot terminal-dot--red"></span>
+            <span class="terminal-dot terminal-dot--yellow"></span>
+            <span class="terminal-dot terminal-dot--green"></span>
+            <span class="hero-terminal-title">ducate - portfolio</span>
+          </div>
+          <div class="hero-terminal-body">
+            <div class="hero-line">
+              <span class="hero-prompt">❯</span>
+              <span class="hero-command">whoami</span>
+            </div>
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-title"><span class="accent">Damien</span></h1>
+            <p class="hero-subtitle">
+              <span class="type">string</span> focus = web design, finance, tech, ai
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span class="btn-prefix">$</span> view --work
+              </a>
+              <a href="https://github.com/DamienDucate" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                <span class="btn-prefix">→</span> github
+              </a>
+              <a href="https://x.com/Damien_Ducate" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                <span class="btn-prefix">→</span> x
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <a href="#about" class="scroll-hint" aria-label="Scroll down">
-        <span></span>
-      </a>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">scroll</a>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section about">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
+        <div class="section-header">
+          <span class="section-accent"></span>
+          <h2 class="section-title">about.me</h2>
+        </div>
         <div class="about-grid">
           <div class="about-image">
             <div class="avatar-placeholder">
@@ -62,29 +86,32 @@
           </div>
           <div class="about-text">
             <p>
-              I'm a passionate learner exploring the world of web development.
-              I enjoy turning ideas into clean, functional websites and am always
-              curious about new technologies.
+              I'm a passionate learner exploring the world of web &amp; app
+              development with AI. I enjoy turning ideas into clean, functional
+              websites.
             </p>
             <p>
-              When I'm not coding, you can find me reading, exploring new hobbies,
-              or working on side projects.
+              I'm almost always exploring new hobbies, working on side projects,
+              watching old movies, collecting platinum trophies, or adding bugs to
+              my software to fix later.
             </p>
             <ul class="skills-list">
               <li>HTML &amp; CSS</li>
-              <li>JavaScript</li>
+              <li>Finance</li>
               <li>AI</li>
-              <li>Git &amp; GitHub</li>
+              <li>Tech Stuff</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section projects">
       <div class="container">
-        <h2 class="section-title">Projects</h2>
+        <div class="section-header">
+          <span class="section-accent"></span>
+          <h2 class="section-title">projects/</h2>
+        </div>
         <p class="section-subtitle">A few things I've been working on</p>
 
         <div class="projects-grid">
@@ -101,7 +128,7 @@
                 <span>TypeScript</span>
                 <span>PWA</span>
               </div>
-              <a href="/rus/" class="project-link">View Project →</a>
+              <a href="/rus/" class="project-link">open /rus/ →</a>
             </div>
           </article>
 
@@ -116,7 +143,7 @@
                 <span>JavaScript</span>
                 <span>API</span>
               </div>
-              <a href="#" class="project-link">View Project →</a>
+              <a href="#" class="project-link">open →</a>
             </div>
           </article>
 
@@ -131,7 +158,7 @@
                 <span>React</span>
                 <span>Node.js</span>
               </div>
-              <a href="#" class="project-link">View Project →</a>
+              <a href="#" class="project-link">open →</a>
             </div>
           </article>
 
@@ -141,13 +168,12 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
-      <p>&copy; 2026 Ducate. Built with HTML, CSS &amp; JavaScript.</p>
+      <p>&copy; 2026 Ducate</p>
       <div class="footer-links">
-        <a href="https://github.com/DamienDucate" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://x.com/Damien_Ducate" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://github.com/DamienDucate" target="_blank" rel="noopener noreferrer">github</a>
+        <a href="https://x.com/Damien_Ducate" target="_blank" rel="noopener noreferrer">x</a>
       </div>
     </div>
   </footer>
